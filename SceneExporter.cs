@@ -8,6 +8,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
+using UnityEngine.Scripting;
 
 namespace Demonixis.UnityJSONSceneExporter
 {
@@ -178,8 +179,9 @@ namespace Demonixis.UnityJSONSceneExporter
                     lightType = -1;
 
                 uGameObject.Light = new ULight
-                {
+                {                  
                     Intensity = light.intensity,
+                    IndirectMultiplier = light.bounceIntensity,
                     Radius = light.range,
                     Color = ToFloat4(light.color),
                     Angle = light.spotAngle,

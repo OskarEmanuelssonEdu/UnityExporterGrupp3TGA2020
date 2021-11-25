@@ -25,6 +25,7 @@ namespace Demonixis.UnityJSONSceneExporter
         public bool Enabled;
         public float Radius;
         public float Intensity;
+        public float IndirectMultiplier;
         public float Type;
         public float Angle;
         public float[] Color;
