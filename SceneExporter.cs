@@ -92,6 +92,7 @@ namespace Demonixis.UnityJSONSceneExporter
 
             float[][] navMeshVerticies = new float[mesh.vertices.Length][];
             List<int> navMeshIndicies = new List<int>();
+            List<int> navMeshAreaData = new List<int>();
             int navMeshAreas = 0;
 
             for (int i = 0; i < mesh.vertices.Length; i++)
@@ -102,11 +103,18 @@ namespace Demonixis.UnityJSONSceneExporter
             {
                 navMeshIndicies.Add(index);
             }
+
+            foreach (int area in mesh.areas)
+            {
+                navMeshAreaData.Add(area);
+            }
+
             navMeshAreas = mesh.areas.Length;
 
             var someNavMeshData = new UNavMeshData
             {
                 Areas = navMeshAreas,
+                AreaData = navMeshAreaData.ToArray(),
                 Indices = navMeshIndicies.ToArray(),
                 Verticies = navMeshVerticies
             };

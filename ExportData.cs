@@ -16,6 +16,7 @@ namespace Demonixis.UnityJSONSceneExporter
     {
         public float[][] Verticies;
         public int[] Indices;
+        public int[] AreaData;
         public int Areas;
     }
 
